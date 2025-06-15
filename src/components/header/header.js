@@ -1,3 +1,5 @@
+import headerHtml from "./header.html?raw";
+
 function addBurgerActive() {
 	const burger = document.querySelectorAll(".header__burger");
 	const nav = document.querySelector(".header__nav");
@@ -27,16 +29,40 @@ function setActiveLink() {
 	}
 }
 
-export async function renderHeader() {
-	await fetch("/src/components/header/header.html")
-		.then((response) => response.text())
-		.then((data) => {
-			const placeholder = document.getElementById("header-placeholder");
-			const temp = document.createElement("div");
-			temp.innerHTML = data;
-			const header = temp.firstElementChild;
-			placeholder.replaceWith(header);
-		});
+export function renderHeader() {
+	const placeholder = document.getElementById("header-placeholder");
+	if (!placeholder) {
+		console.error("Header placeholder not found");
+		return;
+	}
+
+	const temp = document.createElement("div");
+	temp.innerHTML = `
+		<header class="header">
+	<div class="header__inner">
+		<a href="index.html" class="header__logo"></a>
+		<nav class="header__nav">
+			<button class="header__burger header__burger--in-nav">
+				<i class="ph ph-x"></i>
+			</button>
+			<a id="link-home" href="index.html" class="header__link">
+				<i class="ph ph-house"></i> Главная</a
+			>
+			<a id="link-catalog" href="catalog.html" class="header__link"
+				><i class="ph ph-shopping-bag"></i> Каталог</a
+			>
+			<a id="link-about" href="about.html" class="header__link"
+				><i class="ph ph-info"></i> О нас</a
+			>
+		</nav>
+		<button class="header__burger"><i class="ph ph-list"></i></button>
+	</div>
+</header>
+
+	`;
+	const header = temp.firstElementChild;
+
+	placeholder.replaceWith(header);
 
 	setActiveLink();
 	addBurgerActive();
