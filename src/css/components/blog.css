@@ -1,0 +1,112 @@
+.blog {
+	padding: 4rem 0;
+	background-color: var(--clr-surface-a0);
+}
+
+.blog-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 2rem;
+}
+
+.blog-card {
+	background-color: var(--clr-surface-a10);
+	border-radius: var(--border);
+	overflow: hidden;
+	transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+	transform: translateY(-5px);
+}
+
+.blog-card__image {
+	height: 180px;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.blog-card__image::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+}
+
+.blog-card__source {
+	position: absolute;
+	bottom: 1rem;
+	left: 1rem;
+	background-color: var(--clr-primary-a0);
+	color: var(--clr-dark-a0);
+	padding: 0.3rem 0.8rem;
+	border-radius: 20px;
+	font-size: var(--font-size-small);
+	font-weight: bold;
+	z-index: 1;
+}
+
+.blog-card__content {
+	padding: 1.5rem;
+}
+
+.blog-card__title {
+	font-size: var(--font-size-h3);
+	color: var(--clr-light-a0);
+	margin-bottom: 1rem;
+	font-family: var(--russo);
+}
+
+.blog-card__excerpt {
+	color: var(--clr-light-a40);
+	font-size: var(--font-size-body);
+	margin-bottom: 1.5rem;
+	line-height: 1.5;
+}
+
+.blog-card__link {
+	display: inline-block;
+	color: var(--clr-primary-a0);
+	font-weight: bold;
+	text-decoration: none;
+	font-size: var(--font-size-body);
+	transition: color 0.3s ease;
+}
+
+.blog-card__link:hover {
+	color: var(--clr-primary-a30);
+}
+
+.blog-card__link::after {
+	content: "→";
+	margin-left: 0.5rem;
+	transition: margin-left 0.3s ease;
+}
+
+.blog-card__link:hover::after {
+	margin-left: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	.products-grid,
+	.blog-grid {
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	}
+
+	.bests,
+	.blog {
+		padding: 3rem 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.products-grid,
+	.blog-grid {
+		grid-template-columns: 1fr;
+	}
+}

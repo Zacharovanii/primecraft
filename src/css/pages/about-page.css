@@ -1,0 +1,175 @@
+@import url("../index.css");
+
+/* Основные стили страницы "О нас" */
+.about-page {
+	background-color: var(--clr-surface-a0);
+	color: var(--clr-light-a0);
+	padding: 2rem 0;
+}
+
+.about-container {
+	display: flex;
+	max-width: 1280px;
+	margin: 0 auto;
+	gap: 2rem;
+}
+
+/* Стили сайдбара */
+.about-sidebar {
+	width: 250px;
+	position: sticky;
+	top: calc(var(--header-h) + 20px);
+	align-self: flex-start;
+	flex-shrink: 0;
+}
+
+.sidebar-nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar-nav a {
+	display: block;
+	padding: 0.8rem 1rem;
+	margin-bottom: 0.5rem;
+	color: var(--clr-light-a0);
+	text-decoration: none;
+	border-radius: var(--border);
+	font-family: var(--font-family-main);
+	transition: all 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+	background-color: var(--clr-primary-a0);
+	color: var(--clr-dark-a0);
+}
+
+/* Убираем все стили для .active */
+
+/* Плавная прокрутка для всего документа */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Стили основного контента */
+.about-content {
+	flex: 1;
+	background-color: var(--clr-surface-a10);
+	border-radius: var(--border);
+	padding: 2rem;
+}
+
+.about-hero {
+	margin-bottom: 3rem;
+}
+
+.about-title {
+	font-size: var(--font-size-h1);
+	font-family: var(--russo);
+	color: var(--clr-primary-a0);
+	margin-bottom: 1rem;
+}
+
+.about-subtitle {
+	font-size: var(--font-size-h3);
+	color: var(--clr-light-a40);
+	margin-bottom: 2rem;
+}
+
+.about-description p {
+	margin-bottom: 1rem;
+	font-size: var(--font-size-body);
+	line-height: 1.6;
+}
+
+/* Стили секций */
+section {
+	margin-bottom: 3rem;
+}
+
+h2 {
+	font-size: var(--font-size-h2);
+	font-family: var(--russo);
+	color: var(--clr-primary-a0);
+	margin-bottom: 1.5rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 2px solid var(--clr-primary-a20);
+}
+
+h3 {
+	font-size: var(--font-size-h3);
+	color: var(--clr-primary-a30);
+	margin-bottom: 1rem;
+}
+
+/* Карточки и списки */
+.mission-card,
+.production-item,
+.quality-step,
+.team-member {
+	background-color: var(--clr-surface-a20);
+	padding: 1.5rem;
+	border-radius: var(--border);
+	margin-bottom: 1.5rem;
+}
+
+.mission-values,
+.achievements-list {
+	padding-left: 1.5rem;
+}
+
+.mission-values li,
+.achievements-list li {
+	margin-bottom: 0.8rem;
+	position: relative;
+}
+
+/* Грид-секции */
+.production-grid,
+.quality-steps,
+.team-members {
+	display: grid;
+	gap: 1.5rem;
+}
+
+.production-grid {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.quality-steps {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.team-members {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+	.about-container {
+		flex-direction: column;
+	}
+
+	.about-sidebar {
+		width: 100%;
+		position: static;
+	}
+
+	.sidebar-nav ul {
+		display: flex;
+		overflow-x: auto;
+		gap: 0.5rem;
+		padding-bottom: 1rem;
+	}
+
+	.sidebar-nav a {
+		white-space: nowrap;
+	}
+
+	.production-grid,
+	.quality-steps,
+	.team-members {
+		grid-template-columns: 1fr;
+	}
+}

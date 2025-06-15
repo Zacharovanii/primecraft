@@ -1,0 +1,93 @@
+body {
+	background-color: var(--clr-dark-a0);
+	color: var(--clr-light-a0);
+	font-family: var(--font-family-main);
+}
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+html {
+	font-size: 16px;
+}
+
+/* Основные стили для контейнера со скроллом */
+.scroll {
+	height: calc(100vh - var(--header-h)); /* Вычитаем высоту хедера */
+	overflow-y: auto; /* Включаем вертикальный скролл */
+	overflow-x: hidden; /* Запрещаем горизонтальный скролл */
+	margin-top: var(--header-h); /* Отступ сверху равен высоте хедера */
+	scroll-behavior: smooth; /* Плавный скролл */
+}
+
+/* Кастомный скроллбар для WebKit (Chrome, Safari, Edge) */
+.scroll::-webkit-scrollbar {
+	width: 10px; /* Ширина скроллбара */
+}
+
+.scroll::-webkit-scrollbar-track {
+	background: var(--clr-surface-a10); /* Цвет трека */
+	border-radius: 5px;
+	margin-top: 5px; /* Небольшой отступ сверху */
+	margin-bottom: 5px; /* И снизу */
+}
+
+.scroll::-webkit-scrollbar-thumb {
+	background: var(--clr-primary-a0); /* Цвет ползунка */
+	border-radius: 5px;
+	border: 2px solid var(--clr-surface-a10); /* Граница для красоты */
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+	background: var(--clr-primary-a10); /* Цвет при наведении */
+}
+
+/* Для Firefox */
+.scroll {
+	scrollbar-width: thin; /* "auto" | "thin" | "none" */
+	scrollbar-color: var(--clr-primary-a0) var(--clr-surface-a10); /* thumb и track */
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+	.scroll::-webkit-scrollbar {
+		width: 6px; /* Уменьшаем ширину на мобильных */
+	}
+}
+
+.content {
+	width: min(1280px, 100%);
+	margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+	.content {
+		padding: 1.5rem;
+	}
+}
+
+@media (max-width: 1200px) {
+	html {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 992px) {
+	html {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 768px) {
+	html {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 480px) {
+	html {
+		font-size: 12px;
+	}
+}

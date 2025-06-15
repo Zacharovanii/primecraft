@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="/src/css/pages/about-page.css" />
+
+		<script src="https://unpkg.com/phosphor-icons"></script>
+		<script type="module" src="/src/js/main.js"></script>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const navLinks = document.querySelectorAll(".sidebar-nav a");
+
+				navLinks.forEach((link) => {
+					link.addEventListener("click", function (e) {
+						e.preventDefault();
+						const targetId = this.getAttribute("href");
+						const targetSection = document.querySelector(targetId);
+
+						targetSection.scrollIntoView({
+							behavior: "smooth",
+							block: "start",
+						});
+					});
+				});
+			});
+		</script>
+
+		<title>PRIMECRAFT | ABOUT</title>
+	</head>
+	<body>
+		<div id="header-placeholder"></div>
+
+		<div class="scroll">
+			<main class="about-page">
+				<div class="about-container content">
+					<!-- Навигационный сайдбар -->
+					<aside class="about-sidebar">
+						<nav class="sidebar-nav">
+							<ul>
+								<li><a href="#about">О компании</a></li>
+								<li><a href="#mission">Наша миссия</a></li>
+								<li><a href="#production">Производство</a></li>
+								<li><a href="#quality">Контроль качества</a></li>
+								<li><a href="#team">Команда</a></li>
+								<li><a href="#achievements">Достижения</a></li>
+							</ul>
+						</nav>
+					</aside>
+
+					<!-- Основной контент -->
+					<div class="about-content">
+						<!-- Герой-секция -->
+						<section class="about-hero" id="about">
+							<h1 class="about-title">PRIME KRAFT</h1>
+							<p class="about-subtitle">
+								Российский производитель спортивного питания
+							</p>
+							<div class="about-description">
+								<p>
+									Prime Kraft - это современная российская компания,
+									специализирующаяся на производстве спортивного питания и
+									добавок премиум-класса.
+								</p>
+								<p>
+									Основана в 2016 году, мы быстро завоевали доверие
+									профессиональных спортсменов и любителей здорового образа
+									жизни.
+								</p>
+							</div>
+						</section>
+
+						<!-- Миссия компании -->
+						<section class="mission-section" id="mission">
+							<h2>Наша миссия</h2>
+							<div class="mission-card">
+								<p>
+									Мы создаем доступное и качественное спортивное питание,
+									помогая людям достигать своих спортивных целей и улучшать
+									качество жизни.
+								</p>
+								<ul class="mission-values">
+									<li>Качество без компромиссов</li>
+									<li>Научный подход к разработкам</li>
+									<li>Доступность продукции</li>
+									<li>Прозрачность производства</li>
+								</ul>
+							</div>
+						</section>
+
+						<!-- Производство -->
+						<section class="production-section" id="production">
+							<h2>Современное производство</h2>
+							<div class="production-grid">
+								<div class="production-item">
+									<h3>Собственные мощности</h3>
+									<p>
+										Все продукты производятся на современных заводах в России,
+										оснащенных оборудованием европейского уровня.
+									</p>
+								</div>
+								<div class="production-item">
+									<h3>Лаборатория разработок</h3>
+									<p>
+										Собственный R&D центр постоянно работает над улучшением
+										формул и созданием новых продуктов.
+									</p>
+								</div>
+							</div>
+						</section>
+
+						<!-- Контроль качества -->
+						<section class="quality-section" id="quality">
+							<h2>Контроль качества</h2>
+							<div class="quality-steps">
+								<div class="quality-step">
+									<h3>1. Отбор сырья</h3>
+									<p>
+										Используем только проверенное сырье от мировых поставщиков
+									</p>
+								</div>
+								<div class="quality-step">
+									<h3>2. Контроль</h3>
+									<p>Каждая партия проходит 5 этапов проверки</p>
+								</div>
+								<div class="quality-step">
+									<h3>3. Сертификация</h3>
+									<p>
+										Вся продукция соответствует ГОСТ и международным стандартам
+									</p>
+								</div>
+							</div>
+						</section>
+
+						<!-- Команда -->
+						<section class="team-section" id="team">
+							<h2>Наша команда</h2>
+							<div class="team-members">
+								<div class="team-member">
+									<h3>Эксперты-технологи</h3>
+									<p>
+										Специалисты с опытом работы в фармацевтической и пищевой
+										промышленности
+									</p>
+								</div>
+								<div class="team-member">
+									<h3>Спортивные врачи</h3>
+									<p>Контролируют безопасность и эффективность формул</p>
+								</div>
+								<div class="team-member">
+									<h3>Профессиональные атлеты</h3>
+									<p>Участвуют в тестировании продукции</p>
+								</div>
+							</div>
+						</section>
+
+						<!-- Достижения -->
+						<section class="achievements-section" id="achievements">
+							<h2>Наши достижения</h2>
+							<ul class="achievements-list">
+								<li>Более 1 000 000 довольных клиентов</li>
+								<li>Продукция представлена в 5 странах</li>
+								<li>Официальный партнер российских спортивных федераций</li>
+								<li>Более 100 продуктов в ассортименте</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</main>
+			<footer class="footer">
+				<div class="footer__inner">
+					<div class="footer__logo">
+						<img src="/public/img/logo_primekraft.svg" alt="PrimeKraft" />
+					</div>
+					<div class="footer__nav">
+						<div class="footer__nav-column">
+							<h4 class="footer__nav-title">Продукция</h4>
+							<ul>
+								<li><a href="#">Протеины</a></li>
+								<li><a href="#">Гейнеры</a></li>
+								<li><a href="#">Аминокислоты</a></li>
+								<li><a href="#">Креатин</a></li>
+							</ul>
+						</div>
+						<div class="footer__nav-column">
+							<h4 class="footer__nav-title">Компания</h4>
+							<ul>
+								<li><a href="#">О нас</a></li>
+								<li><a href="#">Производство</a></li>
+								<li><a href="#">Контакты</a></li>
+								<li><a href="#">Вакансии</a></li>
+							</ul>
+						</div>
+						<div class="footer__nav-column">
+							<h4 class="footer__nav-title">Помощь</h4>
+							<ul>
+								<li><a href="#">Доставка и оплата</a></li>
+								<li><a href="#">Возврат</a></li>
+								<li><a href="#">Вопросы и ответы</a></li>
+								<li><a href="#">Публичная оферта</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer__contacts">
+						<h4 class="footer__contacts-title">Контакты</h4>
+						<a href="tel:+78001234567" class="footer__phone"
+							>8 (800) 123-45-67</a
+						>
+						<a href="mailto:info@primekraft.ru" class="footer__email"
+							>info@primekraft.ru</a
+						>
+						<div class="footer__social">
+							<a href="#" aria-label="VK"
+								><i class="ph ph-paper-plane-tilt"></i
+							></a>
+							<a href="#" aria-label="Telegram"
+								><i class="ph ph-telegram-logo"></i
+							></a>
+							<a href="#" aria-label="YouTube"
+								><i class="ph ph-youtube-logo"></i
+							></a>
+						</div>
+					</div>
+				</div>
+				<div class="footer__bottom">
+					<p class="footer__copyright">
+						© 2023 PRIMEKRAFT. Все права защищены.
+					</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

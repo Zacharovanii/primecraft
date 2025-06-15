@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Russo+One&display=swap");
+:root {
+	/** Base colors */
+	--clr-dark-a0: #000000;
+	--clr-light-a0: #ffffff;
+
+	/** Theme primary colors */
+	--clr-primary-a0: #ffe642;
+	--clr-primary-a10: #ffe95c;
+	--clr-primary-a20: #ffeb73;
+	--clr-primary-a30: #ffee89;
+	--clr-primary-a40: #fff19d;
+	--clr-primary-a50: #fff4b1;
+
+	--clr-primary-opacity-a0: #ffe64250;
+	--clr-primary-opacity-a10: #ffe95c50;
+	--clr-primary-opacity-a20: #ffeb7350;
+	--clr-primary-opacity-a30: #ffee8950;
+	--clr-primary-opacity-a40: #fff19d50;
+	--clr-primary-opacity-a50: #fff4b150;
+
+	/** Theme surface colors */
+	--clr-surface-a0: #121212;
+	--clr-surface-a10: #282828;
+	--clr-surface-a20: #3f3f3f;
+	--clr-surface-a30: #575757;
+	--clr-surface-a40: #717171;
+	--clr-surface-a50: #8b8b8b;
+
+	--clr-surface-opacity-a0: #12121250;
+	--clr-surface-opacity-a10: #28282850;
+	--clr-surface-opacity-a20: #3f3f3f50;
+	--clr-surface-opacity-a30: #57575750;
+	--clr-surface-opacity-a40: #71717150;
+	--clr-surface-opacity-a50: #8b8b8b50;
+	/** Theme tonal surface colors */
+	--clr-surface-tonal-a0: #262419;
+	--clr-surface-tonal-a10: #3b382e;
+	--clr-surface-tonal-a20: #504e45;
+	--clr-surface-tonal-a30: #67655c;
+	--clr-surface-tonal-a40: #7e7d75;
+	--clr-surface-tonal-a50: #97958f;
+
+	/* Базовые параметры */
+	/* --font-family-main: "Inter", sans-serif; */
+	--font-size-base: 1rem;
+
+	/* Адаптивные размеры заголовков и текста */
+	--font-size-h1: clamp(2rem, 4vw + 1rem, 3.5rem);
+	--font-size-h2: clamp(1.5rem, 3vw + 0.5rem, 2.5rem);
+	--font-size-h3: clamp(1.25rem, 2vw + 0.5rem, 2rem);
+	--font-size-large: clamp(1.125rem, 1.5vw + 0.5rem, 1.65rem);
+	--font-size-body: clamp(0.875rem, 1vw + 0.5rem, 1.35rem);
+	--font-size-small: clamp(0.75rem, 0.5vw + 0.25rem, 1rem);
+
+	--font-size-hero-section-title: clamp(2rem, 5vw + 1rem, 5rem);
+	--font-size-hero-section-subtitle: clamp(1rem, 2.5vw + 0.5rem, 2rem);
+
+	--container-padding: 1rem;
+	--border: 5px;
+
+	--russo: "Russo One";
+	--font-family-main: "PT Sans";
+}
